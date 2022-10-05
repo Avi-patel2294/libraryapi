@@ -28,7 +28,10 @@ export class AuthService {
       .pipe(
         tap(res => {
           this.isAuthenticated = res !== null;
+          console.log(res);
           this.currentMember = res;
+          //Passing true when logged in.
+          this.loggedIn.next(true);
         })
       );
   }

@@ -65,6 +65,7 @@ export class LoginComponent implements OnInit {
             this.isLoading = false;
 
             // login successful so redirect to return url
+            //console.log(this.returnUrl);
             this.router.navigateByUrl(this.returnUrl);
           },
           error => {

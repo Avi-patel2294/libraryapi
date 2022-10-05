@@ -36,7 +36,8 @@ export class BookListComponent implements OnInit, AfterViewInit {
     if (value != null) {
       forkJoin([
         this.books.getBooks(this.currentLibrary.libraryId),
-        this.books.getAvailableBooks(this.currentLibrary.libraryId)
+        this.books.getAvailableBooks(this.currentLibrary.libraryId),
+        //this.books.getCheckedOutBooks(this.currentLibrary.libraryId)
       ])
         .pipe(
           map(([books, availableBooks]) => {
